@@ -7,7 +7,7 @@ class Car: #class definition
         print(f"The {self.color} {self.brand} is driving.")
 
     
-car1 = Car("red", "Toyota") #car1 is an object of class Car "red" is an attribute value for color 
+car1 = Car("red", "Toyota") #car1 is an instance (object) of class Car "red" is an attribute value for color 
 car2 = Car("blue", "BMW")
 
 

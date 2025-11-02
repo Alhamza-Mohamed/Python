@@ -84,3 +84,20 @@ shapes = [Rectangle(), Circle()]
 
 for shape in shapes:
     print(shape.area())
+
+# Inheritance without polymorphism
+class Veicle:
+    def __init__(self):
+        self.engine 
+        self.wheels
+        self.color
+        self.brand
+        self.doors
+
+class Car(Veicle):
+    def __init__(self):
+        self.doors=4
+        self.wheels=4
+
+car1 = Car()
+print(car1.doors)
