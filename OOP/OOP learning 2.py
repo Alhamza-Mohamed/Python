@@ -100,4 +100,6 @@ class Car(Veicle):
         self.wheels=4
 
 car1 = Car()
+car1.brand="Toyota"
 print(car1.doors)
+print(car1.brand)
