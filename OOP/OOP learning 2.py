@@ -24,7 +24,7 @@ print(acc.get_balance())  # Output: 1500
 acc.__balance = 2000  # Attempt to modify private attribute directly
 print(acc.get_balance())  # Output: 1500 (remains unchanged)
 
-# Abstraction
+# Abstraction 1
 from abc import ABC, abstractmethod
 
 class PaymentProcessor(ABC):
@@ -40,12 +40,25 @@ class StripeProcessor(PaymentProcessor):
     def pay(self, amount):
         print (f"Paid ${amount} using stripe")
 
-# User does not need to know implementation details
+## User does not need to know implementation details
 payment = StripeProcessor()
 payment.pay(100)
 
+# Abstraction 2
+class Animal(ABC): #Inerit from ABC = abstract base class
+    @abstractmethod
+    def  make_sound(self):
+        pass # no implementation here
     
-        
+class Dog1(Animal):
+    def make_sound(self):
+        print("Woof")
+    
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow")
+
+
 
 # Inheritance With polymorphism
 class Animal:
@@ -103,3 +116,6 @@ car1 = Car()
 car1.brand="Toyota"
 print(car1.doors)
 print(car1.brand)
+
+dog1 = Dog1()
+dog1.make_sound    

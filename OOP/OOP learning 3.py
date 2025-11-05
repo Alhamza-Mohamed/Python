@@ -45,7 +45,7 @@ class Employee:
 
 
     def __repr__(self):#Python doesn’t know which attributes you want to show — it only knows your object exists in memory.
-        return f"Employee(name='{self.name}', role='{self.role}')"#By defining __str__ or __repr__, you’re teaching Python how to describe your object in a readable way.
+        return f"Employee(Name is '{self.name}', role is '{self.role}')"#By defining __str__ or __repr__, you’re teaching Python how to describe your object in a readable way.
 
 class Department:
     def __init__(self, name):
@@ -88,3 +88,39 @@ car1 = Car("Toyota",engin1)
 
 print(f"the car's brand is {car1.brand} and its engin is {car1.engine.name}")
 
+# Composition
+class Engine_power:
+    def __init__(self,horsepower):
+        self.horsepower = horsepower
+
+    def start(self):
+        print(f"Engine with {self.horsepower} HP started")
+        
+class vehicle:
+    def __init__(self, brand, horsepower):
+        self.brand = brand
+        self.engine = Engine_power(horsepower) # created INSIDE → composition
+    
+    def start(self):
+        print (f"{self.brand} car started")
+        self.engine.start()
+
+car3 = vehicle("Toyota", 500)
+car3.start()
+
+# Dependency 
+class Mechanic:
+    def repair(self, truck):
+        print(f"Repairing {truck.brand} Done")
+
+class Truck:
+    def __init__(self,brand):
+        self.brand = brand
+    
+    def service(self, mechanic): # depends on Mechanic
+        mechanic.repair(self)    # uses Mechanic temporarily
+
+truck1 = Truck("Mercedes")
+mechanic1 = Mechanic()
+
+truck1.service(mechanic1) # it calls mechanic1.repair(truck1)
