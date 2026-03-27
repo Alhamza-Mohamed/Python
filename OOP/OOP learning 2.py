@@ -45,7 +45,7 @@ payment = StripeProcessor()
 payment.pay(100)
 
 # Abstraction 2
-class Animal(ABC): #Inerit from ABC = abstract base class
+class Animal(ABC): #Inherit from ABC = abstract base class
     @abstractmethod
     def  make_sound(self):
         pass # no implementation here
