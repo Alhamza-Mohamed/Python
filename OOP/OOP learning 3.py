@@ -63,7 +63,7 @@ class Department:
 emp1 = Employee("Alhamza", "AI Engineer")
 emp2 = Employee("Mohamed", "ML Engineer")
 
-department1 =  Department("AI Deparnment")
+department1 =  Department("AI Department")
 
 department1.add_employee(emp1)
 department1.add_employee(emp2)
@@ -81,7 +81,7 @@ class Engine:
 class Car:
     def __init__ (self, brand, engine_name):
         self.brand = brand
-        self.engine = engine_name #aggrigation with object
+        self.engine = engine_name #aggregation with object
 
 engin1 = Engine("v6")
 car1 = Car("Toyota",engin1)

@@ -78,7 +78,7 @@ cat = Cat()
 
 dog.speak()  # Output: Bark!
 cat.speak()  # Output: Meow!
-#Dog and Cat inhearited the structure from Animal class and provided their own implementation of speak method
+#Dog and Cat inherited the structure from Animal class and provided their own implementation of speak method
 
 # Polymorphism
 class Shape:
@@ -99,7 +99,7 @@ for shape in shapes:
     print(shape.area())
 
 # Inheritance without polymorphism
-class Veicle:
+class Vehicle:
     def __init__(self):
         self.engine 
         self.wheels
@@ -107,7 +107,7 @@ class Veicle:
         self.brand
         self.doors
 
-class Car(Veicle):
+class Car(Vehicle):
     def __init__(self):
         self.doors=4
         self.wheels=4
