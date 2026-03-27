@@ -19,7 +19,7 @@ car1.drive()
 
 
 class MathUtils:
-    pi = 3.1415 #class variabel (static Attributes)
+    pi = 3.1415 #class variable (static Attributes)
 
     @staticmethod
     def add(a, b): #static method
@@ -38,9 +38,26 @@ class Student:
         self.grade = grade
 
     def study(self):
-        print(f"{self.name} is studing in {self.school}. He is in {self.department} department and his grade is {self.grade}.")
+        print(f"{self.name} is studding in {self.school}. He is in {self.department} department and his grade is {self.grade}.")
 
 #create objects
 s1 = Student("Alhamza","A","Computer Engineering")
 s1.study()
 print (s1.school)
+
+# Dependency 
+class EmailService:
+    def send (self, message):
+        print (f"Sending email: {message}" )
+
+class OrderProcessor:
+    def __init__ (self, email_service: EmailService): # dependency injected here
+        self.email_service = email_service            # stored as an instance attribute
+
+    def process(self, order):  
+        print (f"Processing order: {order}")
+        self.email_service.send (f"order {order} confirmed!")
+
+service = EmailService()                # create the dependency
+processor = OrderProcessor (service)    # inject in into the constructor
+processor.process("ORD-001")
